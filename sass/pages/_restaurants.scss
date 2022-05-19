@@ -1,0 +1,189 @@
+main {
+    font-family: 'Roboto', sans-serif;
+    & .menu-img {
+        width: 100%;
+        position: relative;
+        z-index: -1;
+        object-fit: cover;
+        max-height: 16em;
+    
+    }
+}
+
+.menu{
+    z-index: 1;
+    margin-top: -3em;
+    width: 100%;
+    background-color: #f6f6f6;
+    border-radius: 35px 35px 0 0;
+    padding-bottom: 4em;
+    &__titre{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 20px;
+        padding: 0.5em 1em;
+        
+        & h2 {
+            margin: 0 ;
+            padding: 0.5em 0;
+            font-family:'Shrikhand', cursive;
+        }
+    
+    }
+    &__titre-coeur{
+        padding-right: 10px;  
+        font-size: 30px;
+        color: transparent;
+        -webkit-text-stroke: 3px #4c4c4c;
+      
+     &:hover {
+         animation: remplissage-coeur 2s forwards;
+     }
+    }
+    
+    &__container{
+        margin-bottom: 3em;
+    }
+ 
+    & h4{
+        color: #7b7b7b;
+        font-weight: 400;
+        margin: 0.5em auto;
+        padding-left: 1.5em;
+
+    }
+
+    & .sidebar{
+        height: 0.2em;
+        width: 2.5em;
+        background-color: $color-tertiary;
+        margin-left: 1.5em ;
+    }
+    
+    & .plat {
+        position: relative;
+        width: 95%;
+        height: 5em;
+        margin:1em auto 1em auto;
+        background-color: white;
+        border-radius: 10px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+        box-shadow: 1px 1px 8px #c2c2c2;
+        animation: apparition 1.5s forwards;
+        opacity: 0;
+        overflow: hidden;
+        &__info{
+            width: 100%;
+            font-size: 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-left: 5px;
+            
+            
+        }
+        & h5 , & p {
+            margin: 0.8em auto;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+           
+           
+        }        
+        & h5 {
+            font-size: 20px;
+            
+           
+        }
+        &__prix{
+            font-weight: 500;
+            color: #353535;
+            padding-bottom: 0.7em;
+            margin: 0 1.5rem 0 0.3rem;            
+            transition: 0.4s ease;
+        }
+        &__check{
+            position: absolute;
+            right: 0px;
+            width: 3em;
+            height: 100%;
+            font-size: 28px;
+            border-radius: 0 10px 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $color-tertiary ;
+            color: white;
+            transform: translateX(100%);
+            transition: 0.4s ease;        
+        }
+        &:hover {
+           
+            .plat__prix{
+               padding-right: 6em;
+            }
+            .plat__check{
+                transform: translateX(0%);
+                transition: 0.4s ease;
+                
+                i {
+                    animation: check-rotation 0.6s both;
+                }
+            }
+        }   
+    
+    }
+}
+.plat:nth-child(2){
+    animation-delay: 0.4s;
+}
+.plat:nth-child(3){
+    animation-delay: 0.8s;
+}
+.plat:nth-child(4){
+    animation-delay: 1.2s;
+}
+
+
+@media screen and (min-width: 768px) {
+    .menu-img {
+        position: relative;
+        object-fit: cover;
+    }
+    
+    .menu__titre {
+        position: relative;
+        justify-content: space-between;
+        padding: 0 10em;
+    }
+   .carte {
+        display: flex;
+        flex-direction: row;
+
+        & .container {
+            margin: 3em auto;
+            width: 40%;
+        }
+   }
+}
+
+@media screen and (max-width: 400px) {
+    .menu {
+        & h2{
+            font-size: 22px;
+        }
+        & .plat{
+            &__info {
+                font-size: 12px;
+            }    
+
+        
+            & h5 {
+                font-size: 16px;
+            }
+        }
+    }   
+}

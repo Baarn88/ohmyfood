@@ -1,0 +1,23 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    font-family: 'Shrikhand', cursive;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    & h1{
+        margin: 0.1em auto;
+    }
+    
+    
+    & a {
+        text-decoration: none;
+        color: #353535;
+        position: absolute;
+        left: 5%;
+    }
+    
+    
+}
